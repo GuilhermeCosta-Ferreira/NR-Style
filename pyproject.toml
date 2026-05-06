@@ -1,0 +1,18 @@
+[project]
+name = "nrstyle"
+version = "0.1.0"
+description = "The package that will help you making the best NeuroRestore plots"
+authors = [
+    {name = "GuilhermeCF",email = "guilherme.henriquesdacostaferreira@epfl.ch"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib (>=3.10.9,<4.0.0)",
+    "numpy (>=2.4.4,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
