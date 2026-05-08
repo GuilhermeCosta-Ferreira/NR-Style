@@ -28,18 +28,8 @@ def two_group_stat_bar_plot(
     # 2. Builds a dict better suited for this
     sub_groups = sorted(group_1_dict.keys() | group_2_dict.keys())
     data_dict = build_data_dict(group_names, group_1_dict, group_2_dict, sub_groups)
-    g1_point_names = {k: list(v.keys()) for k, v in group_1_dict.items()}
-    #g1_point_names = list(next(iter(g1_point_names.values())).keys())
-    g2_point_names = {k: list(v.keys()) for k, v in group_2_dict.items()}
-    #g2_point_names = list(next(iter(g1_point_names.values())).keys())
     mean_dict = build_mean_data_dict(data_dict)
     std_dict = build_std_data_dict(data_dict)
-
-    print(group_1_dict)
-    print(data_dict)
-    print()
-    print(g1_point_names)
-    print(g2_point_names)
 
 
     # 3. Define the group positioning

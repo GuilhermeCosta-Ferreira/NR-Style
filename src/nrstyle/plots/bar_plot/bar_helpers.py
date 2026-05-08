@@ -161,7 +161,7 @@ def add_pvalue(
             color="black"
         )
         ax.hlines(
-            tallest + 7.0,
+            tallest + plt_settings.pvalue_height,
             x_start - 0.005,
             x_end + 0.0035,
             zorder=7,
@@ -170,7 +170,7 @@ def add_pvalue(
         )
         ax.text(
             (x_start + x_end) / 2,
-            tallest + 7.0 + 2.0,
+            tallest + plt_settings.pvalue_height + 1.0,
             p_to_stars(p_value),
             ha="center",
             fontsize=20,
