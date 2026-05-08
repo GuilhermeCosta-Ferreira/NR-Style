@@ -9,8 +9,8 @@ from scipy.stats import ttest_ind
 
 from ..PlotSettings import PlotSettings
 from ..features import convert_rect_to_grad
-from ...logger import logger
-from ...styling import change_lighness
+
+from ...color import change_lighness
 from ...stats import p_to_stars
 
 
@@ -216,7 +216,7 @@ def get_y_axis(
 # ================================================================
 def assert_same_keys(dict_1: dict, dict_2: dict) -> None:
     if(dict_1.keys != dict_2.keys):
-        logger.warning("Both groups have different sub-group labels, some bars migh be empty\n"
+        print("Both groups have different sub-group labels, some bars migh be empty\n"
             f"Group 1 Keys: {dict_1.keys()}"
             f"Group 2 Keys: {dict_2.keys()}"
         )
