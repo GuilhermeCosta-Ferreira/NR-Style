@@ -1,5 +1,5 @@
 from .AlphaColor import AlphaColor
-from .color_converter import hex2rgb
+from .color_converter import hex2rgb, change_lighness
 from .colors import (
     NR_BLUE,
     NR_RED,
@@ -23,5 +23,6 @@ __all__ = [
     "NR_DARK_BG",
     "NR_DARK_BLUE",
     "AlphaColor",
-    "hex2rgb"
+    "hex2rgb",
+    "change_lighness"
 ]
