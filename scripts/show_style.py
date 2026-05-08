@@ -7,7 +7,8 @@ from nrstyle import init_style
 
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
-from matplotlib.patches import Rectangle
+
+from matplotlib.patches import Rectangle, Circle
 
 
 
@@ -61,7 +62,7 @@ def plot_colored_circles(ax, prng, nb_samples=15):
     """
     for sty_dict, j in zip(plt.rcParams['axes.prop_cycle'](),
                            range(nb_samples)):
-        ax.add_patch(plt.Circle(prng.normal(scale=3, size=2),
+        ax.add_patch(Circle(prng.normal(scale=3, size=2),
                                 radius=1.0, color=sty_dict['color']))
     ax.grid(visible=True)
 
@@ -78,7 +79,7 @@ def plot_image_and_patch(ax, prng, size=(20, 20)):
     """Plot an image with random values and superimpose a circular patch."""
     values = prng.random_sample(size=size)
     ax.imshow(values, interpolation='none')
-    c = plt.Circle((5, 5), radius=5, label='patch')
+    c = Circle((5, 5), radius=5, label='patch')
     ax.add_patch(c)
     # Remove ticks
     ax.set_xticks([])

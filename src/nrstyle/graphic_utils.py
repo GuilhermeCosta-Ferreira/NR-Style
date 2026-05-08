@@ -6,6 +6,8 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+from typing import cast
+from cv2.typing import MatLike
 from matplotlib.colors import LinearSegmentedColormap
 
 from .color import AlphaColor, hex2rgb
@@ -16,7 +18,7 @@ from .color import AlphaColor, hex2rgb
 # 1. Section: Background Removal
 # ================================================================
 def remove_color_for_background(image_path: str, output_path: str, color_threshold: int = 240):
-    img = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
+    img = cast(MatLike, cv2.imread(image_path, cv2.IMREAD_UNCHANGED))
 
     # If the image doesn't have an alpha channel, add one
     if img.shape[2] == 3:
@@ -88,7 +90,7 @@ def transparent_to_color_cmap(ending_color: str, starting_color: str = '#FFFFFF'
 
     return personal_cmap
 
-def tri_colormap(cmap_name: str, color_1: str, color_2: str, color_3: str, n_bins: int = 256) -> LinearSegmentedColormap:
+def tri_colormap(cmap_name: str, color_1: str | tuple, color_2: str | tuple, color_3: str | tuple, n_bins: int = 256) -> LinearSegmentedColormap:
 
     color_1 = hex2rgb(color_1)
     color_2 = hex2rgb(color_2)
@@ -99,7 +101,7 @@ def tri_colormap(cmap_name: str, color_1: str, color_2: str, color_3: str, n_bin
 
     return cmap
 
-def bi_colormap(cmap_name: str, color_1: str, color_2: str, n_bins: int = 256) -> LinearSegmentedColormap:
+def bi_colormap(cmap_name: str, color_1: str | tuple, color_2: str | tuple, n_bins: int = 256) -> LinearSegmentedColormap:
 
     color_1 = hex2rgb(color_1)
     color_2 = hex2rgb(color_2)
