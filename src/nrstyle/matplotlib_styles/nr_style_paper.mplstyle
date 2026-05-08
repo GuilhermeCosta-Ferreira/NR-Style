@@ -1,0 +1,47 @@
+font.family: Diagramm
+font.weight: regular
+
+# Axes
+axes.titleweight: bold
+axes.labelweight: regular
+axes.labelsize: 16
+
+xtick.labelsize: 14
+ytick.labelsize: 14
+axes.linewidth: 1.5
+xtick.major.width: 1.5
+ytick.major.width: 1.5
+xtick.minor.width: 1.5
+ytick.minor.width: 1.5
+
+# Removing axes
+axes.spines.right: False
+axes.spines.top: False
+
+# Grid Parameters
+axes.grid.axis: both
+axes.grid.which: major
+grid.color: 5C6CA4
+axes.axisbelow: True   # <-- this makes the grid stay in the background
+
+# Backgrounds
+# figure.facecolor: 14335A
+# axes.facecolor: 14335A
+
+# font colors
+#text.color: FFFFFF
+
+# axes.labelcolor: FFFFFF
+# xtick.color: FFFFFF
+# ytick.color: FFFFFF
+# axes.edgecolor: FFFFFF
+
+# patch.edgecolor: FFFFFF
+# patch.facecolor: FFFFFF
+
+
+# Plot colors
+axes.prop_cycle: cycler(color=["NR_RED", "NR_BLUE", "NR_LIGHT_RED", "NR_DARK_BLUE"])
+
+# Imshow
+image.cmap: nr_cmap
