@@ -1,17 +1,19 @@
-#m|------ Test the style with a demonstration figure ------|#
+# ================================================================
+# 0. Section: IMPORTS
+# ================================================================
 import numpy as np
 
-from neuroframe_analysis.styling import *
+from nrstyle import init_style
 
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from matplotlib.patches import Rectangle
 
-# Fixing random state for reproducibility
-np.random.seed(19680801)
-plt.style.use('src/neuroframe_analysis/styling/nr_style_paper.mplstyle')
 
 
+# ================================================================
+# 1. Section: Functions
+# ================================================================
 def plot_scatter(ax, prng, nb_samples=100):
     """Scatter plot."""
     for mu, sigma, marker in [(-.5, 0.75, 'o'), (0.75, 1., 's')]:
@@ -139,6 +141,8 @@ def show_style(style_label=""):
     plt.show()
 
 if __name__ == "__main__":
+    init_style()
+    np.random.seed(19680801)
 
     # Plot a demonstration figure for every available style sheet.
     show_style(style_label='nr_style_paper.mplstyle')

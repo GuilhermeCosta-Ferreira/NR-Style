@@ -2,13 +2,13 @@
 # 0. Section: Imports
 # ================================================================
 import cv2
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 from matplotlib.colors import LinearSegmentedColormap
 
-from .graphic_classes import AlphaColor
-from .color_converter import hex2rgb
+from .color import AlphaColor, hex2rgb
 
 
 

@@ -1,6 +1,7 @@
 # ================================================================
 # 0. Section: Imports
 # ================================================================
+from matplotlib import pyplot as plt
 import matplotlib.font_manager as fm
 import matplotlib.colors as mcolors
 
@@ -13,7 +14,7 @@ from .colormaps import (
     alpha_red_cmap_256,
     alpha_blue_cmap_256
 )
-from .colors import (
+from .color import (
     NR_RED,
     NR_LIGHT_RED,
     NR_GREY,
@@ -22,11 +23,13 @@ from .colors import (
     NR_DARK_BLUE
 )
 
+
+
 # ================================================================
 # 1. Section: Font Initialization
 # ================================================================
 def init_font() -> None:
-    BASE_DIR = Path(__file__).resolve().parents[0]
+    BASE_DIR = Path(__file__).resolve().parents[0] / "fonts"
     fm.fontManager.addfont(BASE_DIR / Path("Diagramm/TTF/Diagramm-Light.ttf"))
     fm.fontManager.addfont(BASE_DIR / Path("Diagramm/TTF/Diagramm-Regular.ttf"))
     fm.fontManager.addfont(BASE_DIR / Path("Diagramm/TTF/Diagramm-Bold.ttf"))
@@ -68,3 +71,5 @@ def init_style():
     init_font()
     init_colors()
     init_colormaps()
+
+    plt.style.use('src/nrstyle/matplotlib_styles/nr_style_paper.mplstyle')

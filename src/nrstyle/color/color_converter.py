@@ -16,6 +16,6 @@ def hex2rgb(hex_color: str) -> tuple:
 
 def change_lighness(color: str | tuple, factor: float = 0.1) -> tuple[float, float, float]:
     r, g, b = mcolors.to_rgb(color)
-    h, l, s = colorsys.rgb_to_hls(r, g, b)
-    l = min(1.0, l + factor)
-    return colorsys.hls_to_rgb(h, l, s)
+    h, light, s = colorsys.rgb_to_hls(r, g, b)
+    light = min(1.0, light + factor)
+    return colorsys.hls_to_rgb(h, light, s)
